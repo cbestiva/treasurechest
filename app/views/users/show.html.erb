@@ -1,4 +1,13 @@
-  <div id="container">
+<a href="/posts/new">Post an item for sale</a>
+<h1>Welcome <%= @user.username %></h1>
+
+<% if @posts == [] %>
+  You currently have 0 items posted.
+<% else %>
+  Below are your items currently listed for sale...<br>
+<% end %>
+
+<div id="container">
   <% @posts.each do |post| %>
     <div class="item">
       <div class="img">
@@ -6,21 +15,17 @@
       </div>
       <label>City: </label>
       <%= post.city %><br>
-
       <label>Name: </label>
       <%= post.name %><br>
-
       <label>Category: </label>
       <%= post.category %><br>
-
       <label>Description: </label>
       <%= post.description %><br>
-
       <label>Price: </label>
       <%= post.price %><br>
-
       <label>Contact: </label>
-      <%= post.contact %>
+      <%= post.contact %><br>
+      <%= link_to 'Edit', edit_post_path(post) %> | Delete
     </div> 
   <% end %>
 </div>

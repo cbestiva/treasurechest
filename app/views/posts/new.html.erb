@@ -1,20 +1,38 @@
-<%= form_for @post, :html => {:multipart => true} do |f| %>
-  <%= f.label :city %>
-  <%= f.text_field :city %><br>
+<h4>Post an item for sale:</h4>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <%= form_for @post, :html => {:multipart => true} do |f| %>
+    <div class="form-group">
+      <%= f.label :city %>
+      <%= f.text_field :city %><br>
+    </div>
 
-  <%= f.label :category %>
-  <%= f.select :category, ['Clothes', 'Shoes', 'Accessories', 'Furniture', 'Electronics', 'Toys & Games', 'Household Items', 'Sporting Goods', 'Musical Instrument', 'Antiques', 'Other'], :prompt => 'Select One' %><br>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+    </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br>
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= f.select :category, ['Clothes', 'Shoes', 'Accessories', 'Furniture', 'Electronics', 'Toys & Games', 'Household Items', 'Sporting Goods', 'Musical Instrument', 'Antiques', 'Other'], :prompt => 'Select One' %><br>
+    </div>
 
-  <%= f.label :price %>
-  <%= f.text_field :price %><br>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description %><br>
+    </div>
 
-  <%= f.file_field :image %><br>
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.text_field :price %><br>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <div class="form-group">
+      <%= f.label :contact %>
+      <%= f.text_field :contact %><br>
+    </div>
+
+    <div class="from-group">
+      <%= f.file_field :image %><br>
+    </div>
+    <%= f.submit %>
+  <% end %>
