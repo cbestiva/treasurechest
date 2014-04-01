@@ -1,8 +1,19 @@
-<% @posts.each do |post| %>
-  <%= image_tag post.image_url(:thumb).to_s %><br>
-  <%= post.city %><br>
-  <%= post.name %><br>
-  <%= post.category %><br>
-  <%= post.description %><br>
-  <%= post.price %><br>
-<% end %>
+  <div id="container">
+  <% @posts.each do |post| %>
+    <div class="item">
+      <div class="img">
+        <%= image_tag post.image_url(:thumb).to_s %><br>
+      </div>
+      <label>City: </label>
+      <%= post.city %><br>
+      <label>Name: </label>
+      <%= post.name %><br>
+      <label>Category: </label>
+      <%= post.category %><br>
+      <label>Description: </label>
+      <%= post.description %><br>
+      <label>Price: </label>
+      <%= post.price %><br>
+    </div> 
+  <% end %>
+</div>
