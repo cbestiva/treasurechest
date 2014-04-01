@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <%= image_tag post.image_url(:thumb).to_s %><br>
+  <%= post.city %><br>
+  <%= post.name %><br>
+  <%= post.category %><br>
+  <%= post.description %><br>
+  <%= post.price %><br>
+<% end %>
