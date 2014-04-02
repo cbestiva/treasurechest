@@ -1,32 +1,31 @@
 <%= form_for @post, :html => {:multipart => true} do |f| %>
   <div class="form-group">
-    <%= f.label "City, State" %>
-<!--     <input type="text" id="post_city"> -->
+    <%= f.label "City, State" %><br>
     <%= f.text_field :city %><br>
   </div>
 
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %><br>
   </div>
 
   <div class="form-group">
-    <%= f.label :category %>
+    <%= f.label :category %><br>
     <%= f.select :category, ['Clothes', 'Shoes', 'Accessories', 'Furniture', 'Electronics', 'Toys & Games', 'Household Items', 'Sporting Goods', 'Musical Instrument', 'Antiques', 'Other'], :prompt => 'Select One' %><br>
   </div>
 
   <div class="form-group">
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_area :description %><br>
   </div>
 
   <div class="form-group">
-    <%= f.label :price %>
+    <%= f.label :price %><br>
     <%= f.text_field :price %><br>
   </div>
 
   <div class="form-group">
-    <%= f.label :contact %>
+    <%= f.label :contact %><br>
     <%= f.text_field :contact %><br>
   </div>
 
