@@ -1,3 +1,4 @@
 <h4>Edit post:</h4>
 
-<%= render :partial => "form" %>
+<%= render :partial => "form" %><br>
+<%=button_to 'Delete', {:controller => :posts, :action => "destroy"}, :method=>:delete %>

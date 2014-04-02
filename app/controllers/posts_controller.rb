@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-  
+
   def update
     post = Post.find(params[:id])
     post.update_attributes(params[:post].permit(:city, :name, :category, :description, :price, :image, :contact))
@@ -36,4 +36,15 @@ class PostsController < ApplicationController
       f.json {render json: post, status: 200}
     end
   end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.delete
+
+    respond_to do |f|
+      f.html {redirect_to profile_path(current_user)}
+      f.json {render json: post, status: 200}
+    end
+  end
+
 end

@@ -1,5 +1,5 @@
 <a href="/posts/new">Post an item for sale</a>
-<h1>Welcome <%= @user.username %></h1>
+<h1>Hello <%= @user.username %></h1>
 
 <% if @posts == [] %>
   You currently have 0 items posted.
@@ -25,7 +25,7 @@
       <%= post.price %><br>
       <label>Contact: </label>
       <%= post.contact %><br>
-      <%= link_to 'Edit', edit_post_path(post) %> | Delete
+      <%= link_to 'Edit', edit_post_path(post) %>
     </div> 
   <% end %>
 </div>

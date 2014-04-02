@@ -3,8 +3,10 @@
   width: 320px;
   margin: 5px;
   float: left;
-  border: solid;
+  /*border: solid;*/
   padding: 5px;
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
 }
 
 .img {
