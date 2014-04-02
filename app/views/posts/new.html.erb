@@ -2,7 +2,8 @@
 
   <%= form_for @post, :html => {:multipart => true} do |f| %>
     <div class="form-group">
-      <%= f.label :city %>
+      <%= f.label "City, State" %>
+      <!-- <input type="text" id="post_city"> -->
       <%= f.text_field :city %><br>
     </div>
 
