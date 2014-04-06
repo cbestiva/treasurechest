@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var post_initialize = function() {
 
   var $container = $('#container');
 
@@ -8,10 +8,10 @@ $(document).ready(function() {
     });
   });
 
-  jQuery(function () {
-   jQuery("#post_city").autocomplete({
+  $(function () {
+   $("#post_city").autocomplete({
     source: function (request, response) {
-     jQuery.getJSON(
+     $.getJSON(
       "http://gd.geobytes.com/AutoCompleteCity?callback=?&filter=US&q="+request.term,
       function (data) {
        response(data);
@@ -19,7 +19,11 @@ $(document).ready(function() {
      );
     },
    });
-   jQuery("#post_city").autocomplete("option", "delay", 100);
+   $("#post_city").autocomplete("option", "delay", 100);
   });
 
-});
+
+};
+
+$(document).on('ready page:load', post_initialize);
+

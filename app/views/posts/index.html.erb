@@ -1,3 +1,4 @@
+<h3>Find treasures near you...</h3>
 Enter your city, state: <input type="text" id="post_city"> <br><br>   
 
   <div id="container">
@@ -6,6 +7,9 @@ Enter your city, state: <input type="text" id="post_city"> <br><br>
       <div class="img">
         <%= image_tag post.image_url(:thumb).to_s %><br>
       </div>
+      <label>Posted:</label>
+      <%= post.created_at.strftime("%b. %d %Y") %><br>
+
       <label>City: </label>
       <%= post.city %><br>
 

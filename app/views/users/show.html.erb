@@ -13,6 +13,8 @@
       <div class="img">
         <%= image_tag post.image_url(:thumb).to_s %><br>
       </div>
+      <label>Posted:</label>
+      <%= post.created_at.strftime("%b. %d %Y") %><br>
       <label>City: </label>
       <%= post.city %><br>
       <label>Name: </label>
