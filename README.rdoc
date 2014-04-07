@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Version2 of Treasurebox (removed the use of Angular.js for this project to remove conflicts 
+with Devise and be able to implement Masonry.js)
 
-Things you may want to cover:
+A Craigslist meets Pinterest web application that allows users to sell and buy treasures locally. No need for
+a garage sale. Save time and space with this app by posting a good picture of what you're selling with the 
+neccessary fields filled out.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Technologies:
+- Ruby on Rails
+- HTML5
+- CSS3
+- Bootstrap
+- JavaScript
+- JQuery
+- Masonry.js
+- Devise
+- Carrierwave
+- AWS S3
