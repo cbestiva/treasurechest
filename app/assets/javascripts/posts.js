@@ -23,7 +23,22 @@ var post_initialize = function() {
   });
 
 
+  // var filtered_city_posts = [];
+  // var postDetail = {};
+  // $(".city_submit").on("click", function(event) {
+  //   event.preventDefault();
+  //   var city = $("#post_city").val();
+  //   postDetail = city;
+  //   $.ajax({
+  //     url: "/posts.json",
+  //     type: "GET",
+  //     data: {city: postDetail}
+  //   }).done(function(data) {
+  //     console.log(data);
+  //      // $("#container").html(data).fadeIn();
+  //   });
+  // });
+
 };
 
 $(document).on('ready page:load', post_initialize);
-

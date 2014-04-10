@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :update, :destroy]
   def index
-    @posts = Post.all
-
-    respond_to do |f|
-      f.html
-      f.json {render json: @posts}
+    if params[:search] == nil
+      @posts = Post.all
+    else
+      @posts = Post.where(city: params[:search])
     end
+  end
+
+  def city
+
   end
 
   def new

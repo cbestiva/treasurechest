@@ -1,5 +1,10 @@
 <h3>Find treasures near you...</h3>
-Enter your city, state: <input type="text" id="post_city"> <br><br>   
+<!-- Enter your city, state: <input type="text" id="post_city"> <a href="/posts"><button class="city_submit" type="submit">Submit</button></a> <br><br>   --> 
+
+<%= form_tag posts_path, :method => "get" do %>
+  Enter your city, state: <%= text_field_tag :search, params[:search], placeholder: "San Francisco, CA, United States", id: "post_city" %>
+  <%= submit_tag "Search" %>
+<% end %><br> <br>
 
   <div id="container">
   <% @posts.each do |post| %>
