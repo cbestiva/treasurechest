@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     if params[:search] == nil
       @posts = Post.all
     else
-      @posts = Post.where(city: params[:search])
+      @posts = Post.where(city: params[:search]) 
     end
   end
 
