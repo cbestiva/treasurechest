@@ -1,9 +1,13 @@
-<h3>Find treasures near you...</h3>
-<%= form_tag posts_path, :method => "get" do %>
-  Enter your city, state: <%= text_field_tag :city, params[:city], placeholder: "San Francisco, CA, United States", id: "post_city" %>
-  Category(optional): <%= select_tag :category_id, options_for_select([['Clothes',1], ['Shoes',2], ['Accessories',3], ['Furniture',4], ['Electronics',5], ['Toys & Games',6], ['Household Items',7], ['Sporting Goods',8], ['Musical Instrument',9], ['Antiques',10], ['Other',11]]), :prompt => 'Select One' %>
-  <%= submit_tag "Search", :class => "submit_city" %>
-<% end %>
+<div class="search_container row">
+  <div class="inner_search_container col-md-10">
+    <h3>Find treasures near you...</h3>
+    <%= form_tag posts_path, :method => "get" do %>
+      Enter your city, state: <%= text_field_tag :city, params[:city], placeholder: "San Francisco, CA, United States", id: "post_city" %>
+      Category(optional): <%= select_tag :category_id, options_for_select([['Clothes',1], ['Shoes',2], ['Accessories',3], ['Furniture',4], ['Electronics',5], ['Toys & Games',6], ['Household Items',7], ['Sporting Goods',8], ['Musical Instrument',9], ['Antiques',10], ['Other',11]]), :prompt => 'Select One' %>
+      <%= submit_tag "Search", :class => "submit_city" %>
+    <% end %>
+  </div>
+</div>
 <br>
   
 
