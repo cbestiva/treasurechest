@@ -1,15 +1,13 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :update, :destroy]
   def index
-    if params[:search] == nil
+    if (params[:city] == nil && params[:category_id] == nil) || (params[:city] == "" && params[:category_id] == "")
       @posts = Post.all
+    elsif params[:category_id] == ""
+      @posts = Post.where(city: params[:city]) 
     else
-      @posts = Post.where(city: params[:search]) 
+      @posts = Post.where(city: params[:city]).where(category_id: params[:category_id])
     end
-  end
-
-  def city
-
   end
 
   def new
@@ -17,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_post = params.require(:post).permit(:city, :name, :category, :description, :price, :image, :contact)
+    new_post = params.require(:post).permit(:city, :name, :category_id, :description, :price, :image, :contact)
     post = current_user.posts.create(new_post)
     redirect_to root_url
   end
@@ -32,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update_attributes(params[:post].permit(:city, :name, :category, :description, :price, :image, :contact))
+    post.update_attributes(params[:post].permit(:city, :name, :category_id, :description, :price, :image, :contact))
 
     respond_to do |f|
       f.html {redirect_to profile_path(current_user)}

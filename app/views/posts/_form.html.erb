@@ -11,7 +11,8 @@
 
   <div class="form-group">
     <%= f.label :category %><br>
-    <%= f.select :category, ['Clothes', 'Shoes', 'Accessories', 'Furniture', 'Electronics', 'Toys & Games', 'Household Items', 'Sporting Goods', 'Musical Instrument', 'Antiques', 'Other'], :prompt => 'Select One' %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select One' %><br>
+    <%#= f.select :category_id, [['Clothes',1], ['Shoes',2], ['Accessories',3], ['Furniture',4], ['Electronics',5], ['Toys & Games',6], ['Household Items',7], ['Sporting Goods',8], ['Musical Instrument',9], ['Antiques',10], ['Other',11]], :prompt => 'Select One' %>
   </div>
 
   <div class="form-group">
