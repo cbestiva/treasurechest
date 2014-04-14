@@ -8,14 +8,15 @@ class PostsController < ApplicationController
     else
       @posts = Post.where(city: params[:city]).where(category_id: params[:category_id])
     end
+
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(key: params[:key])
   end
 
   def create
-    new_post = params.require(:post).permit(:city, :name, :category_id, :description, :price, :image, :contact)
+    new_post = params.require(:post).permit(:city, :name, :category_id, :description, :price, :image, :contact, :key)
     post = current_user.posts.create(new_post)
     redirect_to root_url
   end
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update_attributes(params[:post].permit(:city, :name, :category_id, :description, :price, :image, :contact))
+    post.update_attributes(params[:post].permit(:city, :name, :category_id, :description, :price, :image, :contact, :key))
 
     respond_to do |f|
       f.html {redirect_to profile_path(current_user)}

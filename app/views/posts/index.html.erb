@@ -15,7 +15,11 @@
   <% @posts.each do |post| %>
     <div class="item">
       <div class="img">
-        <%= image_tag post.image_url(:thumb).to_s %><br>
+        <% if post.image_processed? %>
+          <%= image_tag post.image_url(:thumb).to_s %><br>
+        <% else %>
+          <em>Processing...</em>
+        <% end %>
       </div>
       <label>Posted:</label>
       <%= post.created_at.strftime("%b. %d %Y") %><br>

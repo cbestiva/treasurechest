@@ -17,6 +17,8 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'devise'
 gem 'fog'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 
 group :test, :development do
   gem 'rspec-rails'
