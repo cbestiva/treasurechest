@@ -9,6 +9,14 @@ class Post < ActiveRecord::Base
     File.basename(image.path || image.filename) if image
   end
 
+  def self.search(search)
+    if search
+      where('LOWER(name) LIKE LOWER(?) OR LOWER(description) LIKE LOWER(?)', "%#{search}%", "%#{search}%")
+    else
+      scoped
+    end
+  end
+
   # def enqueue_image
   #   ImageWorker.perform_async(id, key) if !image_processed && key.present?
   # end
