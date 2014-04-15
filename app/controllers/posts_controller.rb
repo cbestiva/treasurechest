@@ -8,17 +8,21 @@ class PostsController < ApplicationController
     else
       @posts = Post.where(city: params[:city]).where(category_id: params[:category_id])
     end
-
   end
 
   def new
-    @post = Post.new(key: params[:key])
+    @post = Post.new
+    # @post = Post.new(key: params[:key])
   end
 
   def create
     new_post = params.require(:post).permit(:city, :name, :category_id, :description, :price, :image, :contact, :key)
-    post = current_user.posts.create(new_post)
-    redirect_to root_url
+    @post = current_user.posts.create(new_post)
+    
+    respond_to do |f|
+      f.html {redirect_to root_url}
+      f.json {render json: @post}
+    end
   end
 
   def show

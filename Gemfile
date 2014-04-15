@@ -19,6 +19,7 @@ gem 'devise'
 gem 'fog'
 gem 'carrierwave_direct'
 gem 'sidekiq'
+# gem 'jquery-fileupload-rails'
 
 group :test, :development do
   gem 'rspec-rails'

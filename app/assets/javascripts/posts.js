@@ -5,10 +5,10 @@ var post_initialize = function() {
   $container.imagesLoaded(function () {
     $container.masonry({
       itemSelector: '.item'
-    });
+    }); 
   });
 
-  $(function () {
+  $(function() {
    $("#post_city").autocomplete({
     source: function (request, response) {
      $.getJSON(
