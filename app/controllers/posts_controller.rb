@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :update, :destroy]
   def index
     if (params[:city] == nil && params[:category_id] == nil) || (params[:city] == "" && params[:category_id] == "")
-      @posts = Post.all
+      @posts = Post.all.paginate(:per_page => 16, :page => params[:page])
     elsif params[:category_id] == ""
-      @posts = Post.where(city: params[:city]) 
+      @posts = Post.where(city: params[:city]).paginate(:per_page => 16, :page => params[:page])
     else
-      @posts = Post.where(city: params[:city]).where(category_id: params[:category_id])
+      @posts = Post.where(city: params[:city]).where(category_id: params[:category_id]).paginate(:per_page => 16, :page => params[:page])
     end
   end
 

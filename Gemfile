@@ -20,6 +20,7 @@ gem 'fog'
 gem 'carrierwave_direct'
 gem 'sidekiq'
 # gem 'jquery-fileupload-rails'
+gem 'will_paginate', '~> 3.0'
 
 group :test, :development do
   gem 'rspec-rails'
