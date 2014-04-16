@@ -11,6 +11,11 @@
   background-color: #00B4BE;
 }
 
+.treasurechest_icon {
+  width: 30px;
+  height: 30px;
+}
+
 .navbar-default .navbar-brand {
   font-family: 'Sonsie One', cursive;
   font-size: 25px;
