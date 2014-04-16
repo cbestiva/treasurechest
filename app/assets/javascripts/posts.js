@@ -5,7 +5,10 @@ var post_initialize = function() {
   $container.imagesLoaded(function() {
     $container.masonry({
       itemSelector: '.item'
-    }); 
+    });
+    $(".image_popup_link").magnificPopup({
+      type: 'image'
+    });
   });
 
   $container.infinitescroll({
@@ -30,12 +33,6 @@ var post_initialize = function() {
       $(".image_popup_link").magnificPopup({
         type: 'image'
       });
-    });
-  });
-
-  $(function() {
-    $(".image_popup_link").magnificPopup({
-      type: 'image'
     });
   });
 
