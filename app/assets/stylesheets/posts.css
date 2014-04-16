@@ -27,16 +27,31 @@ body {
 }
 
 .search_container {
-  padding-left: 40px;
+  /*border: solid;*/
+  padding-left: 30px;
 }
 
 .inner_search_container {
-  border: solid;
+  /*border: solid;*/
+  /*text-align: center;*/
+}
+
+input#post_city {
+  width: 250px;
+}
+
+input#post_name_description {
+  width: 250px;
+}
+
+input.submit_search {
+  width: 65px;
 }
 
 #container {
   /*border:solid;*/
-  padding-left: 30px;
+  /*padding-left: 30px;*/
+  margin-left: 50px;
 }
 .item {
   width: 320px;
@@ -54,16 +69,24 @@ body {
   max-width: 100%;
 }
 
-input#post_city {
-  width: 250px;
+.pagination {
+  visibility: hidden;
 }
 
-input.submit_city {
-  width: 65px;
-}
-
-input.submit_category {
-  width: 65px;
+#infscr-loading { 
+  text-align: center;
+  z-index: 100;
+  position: fixed;
+  left: 45%;
+  bottom: 40px;
+  width: 200px;
+  padding: 10px;
+  background: #000; 
+  opacity: 0.8;
+  color: #FFF;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
 
 /*Styling for signup page*/
