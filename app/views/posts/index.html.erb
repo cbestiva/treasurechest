@@ -14,36 +14,40 @@
   
 
   <div id="container">
-  <% @posts.each do |post| %>
-    <div class="item" id="<%= post.id %>">
-      <div class="img">
-        <%# if post.image_processed? %>
-          <a class="image_popup_link" href="<%= post.image_url %>"><%= image_tag post.image_url(:thumb).to_s %></a><br>
-        <%# else %>
-          <!-- <em>Processing...</em> -->
-        <%# end %>
-      </div>
-      <label>Posted:</label>
-      <%= post.created_at.strftime("%b. %d %Y") %><br>
+  <% if @posts == []  %>
+    <p>Sorry no posts matched your search. Please try another.</p>
+  <% else %>
+    <% @posts.each do |post| %>
+      <div class="item" id="<%= post.id %>">
+        <div class="img">
+          <%# if post.image_processed? %>
+            <a class="image_popup_link" href="<%= post.image_url %>"><%= image_tag post.image_url(:thumb).to_s %></a><br>
+          <%# else %>
+            <!-- <em>Processing...</em> -->
+          <%# end %>
+        </div>
+        <label>Posted:</label>
+        <%= post.created_at.strftime("%b. %d %Y") %><br>
 
-      <label>City: </label>
-      <%= post.city %><br>
+        <label>City: </label>
+        <%= post.city %><br>
 
-      <label>Name: </label>
-      <%= post.name %><br>
+        <label>Name: </label>
+        <%= post.name %><br>
 
-      <label>Category: </label>
-      <%= post.category.name %><br>
+        <label>Category: </label>
+        <%= post.category.name %><br>
 
-      <label>Description: </label>
-      <%= post.description %><br>
+        <label>Description: </label>
+        <%= post.description %><br>
 
-      <label>Price: </label>
-      <%= post.price %><br>
+        <label>Price: </label>
+        <%= post.price %><br>
 
-      <label>Contact: </label>
-      <%= post.contact %>
-    </div> 
+        <label>Contact: </label>
+        <%= post.contact %>
+      </div> 
+    <% end %>
   <% end %>
 </div>
 
