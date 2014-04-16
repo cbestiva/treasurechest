@@ -2,7 +2,7 @@ var post_initialize = function() {
 
   var $container = $('#container');
 
-  $container.imagesLoaded(function () {
+  $container.imagesLoaded(function() {
     $container.masonry({
       itemSelector: '.item'
     }); 
@@ -19,9 +19,23 @@ var post_initialize = function() {
   },
   function(newElements) {
     var $newElems = $(newElements).css({opacity: 0});
+
+    var $newElemsIDs = $newElems.map(function() {
+      return this.id;
+    }).get();
+
     $newElems.imagesLoaded(function() {
       $newElems.animate({opacity: 1});
       $container.masonry('appended', $newElems, true);
+      $(".image_popup_link").magnificPopup({
+        type: 'image'
+      });
+    });
+  });
+
+  $(function() {
+    $(".image_popup_link").magnificPopup({
+      type: 'image'
     });
   });
 

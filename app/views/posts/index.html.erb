@@ -1,5 +1,6 @@
 <div class="search_container row">
   <div class="inner_search_container col-md-12">
+    
     <h3>Find treasures near you...</h3>
     <%= form_tag posts_path, :class=>"search_form", :method => "get" do %>
       Enter your city, state: <%= text_field_tag :city, params[:city], placeholder: "San Francisco, CA, United States", id: "post_city" %>
@@ -14,10 +15,10 @@
 
   <div id="container">
   <% @posts.each do |post| %>
-    <div class="item">
+    <div class="item" id="<%= post.id %>">
       <div class="img">
         <%# if post.image_processed? %>
-          <%= image_tag post.image_url(:thumb).to_s %><br>
+          <a class="image_popup_link" href="<%= post.image_url %>"><%= image_tag post.image_url(:thumb).to_s %></a><br>
         <%# else %>
           <!-- <em>Processing...</em> -->
         <%# end %>
