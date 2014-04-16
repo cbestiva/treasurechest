@@ -4,11 +4,11 @@ class PostsController < ApplicationController
     if (params[:city] == nil && params[:search] == nil && params[:category_id] == nil) || (params[:city] == "" && params[:search] == "" && params[:category_id] == "")
       @posts = Post.all.order('created_at DESC').paginate(:per_page => 8, :page => params[:page])
     elsif params[:search] == "" && params[:category_id] == ""
-      @posts = Post.where(city: params[:city]).paginate(:per_page => 8, :page => params[:page])
+      @posts = Post.order('created_at DESC').where(city: params[:city]).paginate(:per_page => 8, :page => params[:page])
     elsif params[:category_id] == ""
-      @posts = Post.search(params[:search]).where(city: params[:city]).paginate(:per_page => 8, :page => params[:page])
+      @posts = Post.order('created_at DESC').search(params[:search]).where(city: params[:city]).paginate(:per_page => 8, :page => params[:page])
     else
-      @posts = Post.search(params[:search]).where(city: params[:city]).where(category_id: params[:category_id]).paginate(:per_page => 8, :page => params[:page])
+      @posts = Post.order('created_at DESC').search(params[:search]).where(city: params[:city]).where(category_id: params[:category_id]).paginate(:per_page => 8, :page => params[:page])
     end
   end
 
