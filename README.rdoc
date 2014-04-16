@@ -4,7 +4,7 @@ Version2 of Treasurebox (removed the use of Angular.js for this project to remov
 with Devise and be able to implement Masonry.js)
 
 A Craigslist meets Pinterest web application that allows users to sell and buy treasures locally. No need for
-a garage sale. Save time and space with this app by posting a good picture of what you're selling with the 
+a garage sale. Save time and space with this app by posting a (great) picture of what you're selling with the 
 neccessary fields filled out.
 
 Technologies:
@@ -18,3 +18,5 @@ Technologies:
 - Devise
 - Carrierwave
 - AWS S3
+- Infinite-scroll
+- Magnific-popup
