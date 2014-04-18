@@ -18,5 +18,6 @@ Technologies:
 - Devise
 - Carrierwave
 - AWS S3
+- Geobytes API
 - Infinite-scroll
 - Magnific-popup
