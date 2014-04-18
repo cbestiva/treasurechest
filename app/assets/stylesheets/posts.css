@@ -114,13 +114,17 @@ input.submit_search {
 
 }
 
+.signup_header {
+  padding: 10px;
+}
+
 .signup_container {
   /*border: solid;*/
   text-align: center;
   margin-top: 100px;
   margin-left: 70px;
   margin-right: 70px;
-  padding-top: 70px;
+  padding-top: 40px;
   padding-bottom: 70px;
   background-color: #333333;
   opacity: .85;
@@ -128,10 +132,27 @@ input.submit_search {
 }
 
 /*Styling for signin page*/
+.signin_outter_container {
+  border: solid;
+  border-color: white;
+  background-image: url("signin_background_image.png");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 340px;
+}
+
 .signin_container {
   /*border: solid;*/
   text-align: center;
+  margin-top: 100px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding-bottom: 70px;
+  background-color: #333333;
+  opacity: .85;
+  color: white;
 }
+
 input#user_remember_me{
   width: 20px;
 }
