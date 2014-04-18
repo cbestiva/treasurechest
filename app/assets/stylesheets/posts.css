@@ -26,6 +26,10 @@
   color: white;
 }
 
+.notice_container {
+  text-align: center;
+}
+
 /*Styling for index/home page*/
 body {
   padding-top: 70px;
@@ -53,11 +57,11 @@ input.submit_search {
   width: 65px;
 }
 
-#container {
-  /*border:solid;*/
-  /*padding-left: 30px;*/
-  margin-left: 50px;
+.main_container {
+  /*border: solid;*/
+  /*padding-left: 50px;*/
 }
+
 .item {
   width: 320px;
   margin: 5px;
@@ -94,10 +98,33 @@ input.submit_search {
           border-radius: 10px;
 }
 
+/*Styling for the user page*/
+#container.masonry {
+  margin-left: 50px;
+}
+
 /*Styling for signup page*/
+.signup_outter_contianer {
+  border: solid;
+  border-color: white;
+  background-image: url("background_image.png");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 240px;
+
+}
+
 .signup_container {
   /*border: solid;*/
   text-align: center;
+  margin-top: 100px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #333333;
+  opacity: .85;
+  color: white;
 }
 
 /*Styling for signin page*/
