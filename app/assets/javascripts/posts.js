@@ -24,6 +24,7 @@ var post_initialize = function() {
     var $newElems = $(newElements).css({opacity: 0});
 
     var $newElemsIDs = $newElems.map(function() {
+      // console.log(this.id);
       return this.id;
     }).get();
 
@@ -43,8 +44,7 @@ var post_initialize = function() {
       "http://gd.geobytes.com/AutoCompleteCity?callback=?&filter=US&q="+request.term,
       function (data) {
        response(data);
-      }
-     );
+      });
     },
    });
    $("#post_city").autocomplete("option", "delay", 100);

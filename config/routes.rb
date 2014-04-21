@@ -1,7 +1,4 @@
 Treasurebox2::Application.routes.draw do
-  # get "categories/index"
-  # get "categories/new"
-  # get "categories/create"
   devise_for :users
   resources :posts, :categories
  
