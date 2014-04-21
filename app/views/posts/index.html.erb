@@ -4,7 +4,7 @@
     <h3>Find treasures near you...</h3>
     <%= form_tag posts_path, :class=>"search_form", :method => "get" do %>
       Enter your city, state: <%= text_field_tag :city, params[:city], placeholder: "San Francisco, CA, United States", id: "post_city" %>
-      Search(optional): <%= text_field_tag :search, params[:search], placeholder: "i.e. Sofa", id: "post_name_description" %>
+      Keyword(optional): <%= text_field_tag :search, params[:search], placeholder: "i.e. Sofa", id: "post_name_description" %>
       Category(optional): <%= select_tag :category_id, options_for_select([['Clothes',1], ['Shoes',2], ['Accessories',3], ['Furniture',4], ['Electronics',5], ['Toys & Games',6], ['Household Items',7], ['Sporting Goods',8], ['Musical Instrument',9], ['Antiques',10], ['Other',11]]), :prompt => 'Select One' %>
       <%= submit_tag "Search", :class => "submit_search" %>
     <% end %>
@@ -12,16 +12,16 @@
 </div>
 <br>
   
-
+  <div = class="main_container">
   <div id="container">
   <% if @posts == []  %>
-    <p>Sorry no posts matched your search. Please try another.</p>
+    <p>Sorry no posts matched your search criteria for this city. Please try another.</p>
   <% else %>
     <% @posts.each do |post| %>
       <div class="item" id="<%= post.id %>">
         <div class="img">
           <%# if post.image_processed? %>
-            <a class="image_popup_link" href="<%= post.image_url %>"><%= image_tag post.image_url(:thumb).to_s %></a><br>
+            <a class="image_popup_link" name="<%= post.id %>" href="<%= post.image_url %>"><%= image_tag post.image_url(:thumb).to_s %></a><br>
           <%# else %>
             <!-- <em>Processing...</em> -->
           <%# end %>
@@ -49,6 +49,7 @@
       </div> 
     <% end %>
   <% end %>
+</div>
 </div>
 
 <%= will_paginate @posts %>

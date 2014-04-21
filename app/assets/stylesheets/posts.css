@@ -100,7 +100,26 @@ input.submit_search {
 
 /*Styling for the user page*/
 #container.masonry {
-  margin-left: 50px;
+  margin-left: 25px;
+}
+
+/*Styling for the new post page*/
+.newpost_photo {
+  /*border: solid;*/
+  margin-top: 30px;
+  padding-left: 30px;
+  width: 600px;
+  height: 520px;
+}
+
+.newpost_outter_container {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  .newpost_photo {
+    display: none;
+  }
 }
 
 /*Styling for signup page*/
