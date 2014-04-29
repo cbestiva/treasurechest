@@ -1,5 +1,7 @@
 == README
 
+http://treasurechest-app.herokuapp.com/
+
 Version2 of Treasurebox (removed the use of Angular.js for this project to remove conflicts 
 with Devise and be able to implement Masonry.js)
 
