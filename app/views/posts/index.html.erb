@@ -1,5 +1,5 @@
 <div class="search_container row">
-  <div class="inner_search_container col-md-12">
+  <div class="inner_search_container col-xs-12">
     
     <h3>Find treasures near you...</h3>
     <%= form_tag posts_path, :class=>"search_form", :method => "get" do %>
@@ -12,8 +12,8 @@
 </div>
 <br>
   
-  <div = class="main_container">
-  <div id="container">
+<!-- <div = class="main_container"> -->
+<div id="container">
   <% if @posts == []  %>
     <p>Sorry no posts matched your search criteria for this city. Please try another.</p>
   <% else %>
@@ -50,6 +50,6 @@
     <% end %>
   <% end %>
 </div>
-</div>
+<!-- </div> -->
 
 <%= will_paginate @posts %>

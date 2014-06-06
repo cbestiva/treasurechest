@@ -28,6 +28,11 @@ var post_initialize = function() {
       return this.id;
     }).get();
 
+    var position = function() {
+      history.pushState({infinitescroll:true}, null, url); 
+      return position;
+    };
+    
     $newElems.imagesLoaded(function() {
       $newElems.animate({opacity: 1});
       $container.masonry('appended', $newElems, true);
@@ -36,6 +41,9 @@ var post_initialize = function() {
       });
     });
   });
+
+  
+
 
   $(function() {
    $("#post_city").autocomplete({
